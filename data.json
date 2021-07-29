@@ -26,9 +26,9 @@
     },
     {
       "id": "5",
-      "name": "Smith Jones",
-      "email": "smith@gmail.com",
-      "age": 26
+      "name": "edited name",
+      "email": "edited@mail.com",
+      "age": 99
     }
   ]
 }

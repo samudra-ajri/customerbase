@@ -1,6 +1,6 @@
 import { buildSchema } from 'graphql'
 
-const schema = buildSchema(`
+export default buildSchema(`
     type Customer {
         id: String!
         name: String!
@@ -16,13 +16,14 @@ const schema = buildSchema(`
 
     input CustomerUpdateData {
         id: String!
-        email: String!
-        name: String!
-        age: Int!
+        email: String
+        name: String
+        age: Int
     }
 
     type RootQuery {
         customer(id: String!): Customer!
+        customers: [Customer!]!
     }
 
     type RootMutation {
@@ -33,7 +34,6 @@ const schema = buildSchema(`
 
     schema {
         query: RootQuery
+        mutation: RootMutation
     }
 `)
-
-export default schema
