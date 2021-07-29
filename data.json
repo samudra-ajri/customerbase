@@ -3,31 +3,31 @@
     {
       "id": "1",
       "name": "John Doe",
-      "emai": "jdoe@gmail.com",
+      "email": "jdoe@gmail.com",
       "age": 10
     },
     {
       "id": "2",
       "name": "Stive Smith",
-      "emai": "steve@gmail.com",
+      "email": "steve@gmail.com",
       "age": 25
     },
     {
       "id": "3",
       "name": "Sara Jones",
-      "emai": "sara@gmail.com",
+      "email": "sara@gmail.com",
       "age": 31
     },
     {
       "id": "4",
       "name": "Sara Double",
-      "emai": "sara2@gmail.com",
+      "email": "sara2@gmail.com",
       "age": 31
     },
     {
       "id": "5",
       "name": "Smith Jones",
-      "emai": "smith@gmail.com",
+      "email": "smith@gmail.com",
       "age": 26
     }
   ]

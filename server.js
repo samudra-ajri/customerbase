@@ -1,13 +1,15 @@
 import express from 'express'
 import { graphqlHTTP } from 'express-graphql'
-import schema from './schema.js'
+import graphQLSchema from './graphql/schema.js'
+import graphQLResolvers from './graphql/resolvers.js'
 
 const app = express()
 
 app.use(
     '/graphql',
     graphqlHTTP({
-        schema,
+        schema: graphQLSchema,
+        rootValue: graphQLResolvers,
         graphiql: true,
     }),
 )
