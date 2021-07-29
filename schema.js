@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { 
     GraphQLObjectType, 
     GraphQLSchema, 
@@ -6,13 +7,6 @@ import {
     GraphQLNonNull, 
     GraphQLList
 } from 'graphql'
-
-// Hardcode data
-const Customers = [
-    {id: '1', name: 'John Doe', emai: 'jdoe@gmail.com', age: 35},
-    {id: '2', name: 'Stive Smith', emai: 'steve@gmail.com', age: 25},
-    {id: '3', name: 'Sara Jones', emai: 'sara@gmail.com', age: 31},
-]
 
 // Customer Type
 const CustomerType = new GraphQLObjectType({
@@ -35,17 +29,15 @@ const RootQuery = new GraphQLObjectType({
                 id: {type: GraphQLString}
             },
             resolve(parentValue, args) {
-                for(let i = 0; i < Customers.length; i++) {
-                    if (Customers[i].id == args.id) {
-                        return Customers[i]
-                    }
-                }
+                return axios.get(`http://localhost:3000/customers/${args.id}`)
+                .then(res => res.data)
             }
         },
         customers: {
             type: new GraphQLList(CustomerType),
             resolve(parentValue, args) {
-                return Customers
+                return axios.get('http://localhost:3000/customers')
+                .then(res => res.data)
             }
         }
     }
